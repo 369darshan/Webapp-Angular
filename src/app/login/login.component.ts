@@ -1,13 +1,6 @@
-import {
-  LoginService
-} from './service/login.service';
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  MatDialogRef
-} from '@angular/material/dialog';
+import { LoginService } from './service/login.service';
+import {  Component,  OnInit} from '@angular/core';
+import {  MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -23,7 +16,8 @@ export class LoginComponent implements OnInit {
     remember: false
   };
 
-  constructor(public dialogRef: MatDialogRef < LoginComponent > ) {}
+  constructor( ) {}
+  //public dialogRef: MatDialogRef < LoginComponent >
 
   ngOnInit(): void {}
   onSubmit() {}
@@ -31,6 +25,6 @@ export class LoginComponent implements OnInit {
   // onSubmit( LoginService: LoginService){
   //   console.log('User: ',this.user);
   //   this.dialogRef.close();
-  //    LoginService.auth();
+  //    LoginService.authenticate();
 }
 

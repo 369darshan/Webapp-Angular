@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { mongoose } from "mongoose";
+// import { mongoose } from "mongoose";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class LoginService {
    
 
    }
-  auth(){
+  authenticate(){
     
   }
 }

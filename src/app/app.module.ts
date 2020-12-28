@@ -21,13 +21,15 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './Shared/baseurl';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    UsersComponent
   ], 
   imports: [
     BrowserModule,

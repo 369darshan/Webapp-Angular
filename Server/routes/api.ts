@@ -1,26 +1,30 @@
 import mongoose = require('mongoose')
-const expres = require('express');
-const router = expres.Router();
+const express = require('express');
+const router = express.Router();
 const User = require('../models/user');
 
 
 const db = "mongodb://localhost:27017/Webappdb?readPreference=primary&appname=MongoDB%20Compass&ssl=false"
 
-mongoose.connect(db,err =>{
-    if(err){
-        console.error('Error!' +err);
-    }
-    else{
-        console.log('Connected to mongodb');
-        User.find({ name: 'admin'},(err,docs)=>{
-            if(err){
-                console.log(err);
-            }else{
-                console.log('data:'+docs);
-            }
-        })
-    }
-})
+// router.get('/users',(req,res)=>{
+//     mongoose.connect(db,err =>{
+//         if(err){
+//             console.error('Error!' +err);
+//         }
+//         else{
+//             console.log('Connected to mongodb');
+//             User.find({ name: 'admin'},(err,docs)=>{
+//                 if(err){
+//                     console.log(err);
+//                 }else{
+//                     res.send(docs);
+//                     console.log('data:'+docs);
+//                 }
+//             })
+//         }
+//     })
+// })
+
 
 router.get('/',(req,res)=>{
     res.send('Api routes');
