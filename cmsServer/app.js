@@ -26,7 +26,7 @@ app.use(cookieParser());
 const url = config.mongoUrl;
 
 app.use(passport.initialize());
-app.use(passport.session());
+
 
 // function auth(req,res,next){
   
@@ -53,20 +53,20 @@ app.use(passport.session());
 //     return next(err);
 //   }
 // }
-function auth(req,res,next){
-  if(!req.user){
-    var err = new Error('You are not authenticated!');
-    err.status=403;
-    return next(err);
 
-  }else{
-    next();
+/* Basic auth method for every requests */
+// function auth(req,res,next){
+//   if(!req.user){
+//     var err = new Error('You are not authenticated!');
+//     err.status=403;
+//     return next(err);
 
-    }
-  }
+//   }else{
+//     next();
 
-
-app.use(auth);
+//     }
+//   }
+// app.use(auth);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

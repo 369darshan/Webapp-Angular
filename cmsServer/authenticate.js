@@ -7,9 +7,9 @@ var jwt = require('jsonwebtoken');
 
 var config = require('./config');
 
-exports.local = passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser()); 
+// exports.local = passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser()); 
 
 exports.getToken = function(user){
     return jwt.sign(user, config.secretKey,{expiresIn: 3600});
