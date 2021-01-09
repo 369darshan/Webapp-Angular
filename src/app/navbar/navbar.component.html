@@ -1,21 +1,23 @@
-<!-- <div class="app-navbar" >
-  <div class="nav-bar">
-      <ul>
-        <li class="navbar-item"><a routerLink="/Home-component" routerLinkActive="active">Home</a></li><br>
-        <li class="navbar-item"><a routerLink="/Login-component">Login</a></li>
-        <li class="navbar-item"><a routerLink="/users-component">Users</a></li>
-      </ul>
-    
-  </div>
-</div> -->
+
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
   <div class="container">
-      <a class="navbar-brand">Angular Router</a>
+      <!-- <a class="navbar-brand">Angular Router</a>
       <ul class="nav navbar-nav" routerLinkActive="active">
           <li class="navbar-item"><a class="nav-link" routerLink="/Home-component">Home</a></li>
           <li class="navbar-item"><a class="nav-link" routerLink="/Login-component">Login</a></li>
           <li class="navbar-item"><a class="nav-link" routerLink="/users">Users</a></li>
-      </ul>
+           <li class="navbar-item"><a class="nav-link" routerLink="/UserDetailsComponent">User Details</a></li> 
+      </ul> -->
+    
   </div>
+  <button id="collapseBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleSideBar()" >
+    Menu</button>
+    <div class="sidebar">
+      <ul>
+        <li class="navbar-item"><a class="nav-link" routerLink="/Home-component">Home</a></li>
+        <li class="navbar-item"><a class="nav-link" routerLink="/Login-component">Login</a></li>
+        <li class="navbar-item"><a class="nav-link" routerLink="/users">Users</a></li>
+      </ul>
+    </div>
 </nav>
 

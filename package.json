@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve": "concurrently \"ng serve\" \"cd ./Server && npm run serve\""
+    "serve": "concurrently \"ng serve\" \"cd ./Server && npm run serve\"",
+    "server": "concurrently \"ng serve\" \"cd ./cmsServer && npm run start\""
   },
   "private": true,
   "dependencies": {

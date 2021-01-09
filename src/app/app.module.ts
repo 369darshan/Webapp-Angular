@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home/home.component';
@@ -22,6 +22,8 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './Shared/baseurl';
 import { UsersComponent } from './users/users.component';
+import { from } from 'rxjs';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { UsersComponent } from './users/users.component';
     HomeComponent,
     LoginComponent,
     NavbarComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailsComponent
   ], 
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { UsersComponent } from './users/users.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    MatCardModule
     
    
   ],

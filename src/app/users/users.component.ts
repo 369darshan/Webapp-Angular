@@ -1,8 +1,8 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { UsersService } from './service/users.service';
-import { HttpClient } from '@angular/common/http';
 import { User } from './../models/user';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -10,21 +10,36 @@ import { User } from './../models/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  // dataSource = new MatTableDataSource<any>();
-  constructor(private UsersService: UsersService) {}
+  Userlist = [];
+  
+  // @Input()
+  users$: Observable<User[]>;
+
+  constructor(private UsersService: UsersService) { }
+
 
   ngOnInit(): void {
-    this.refresh();
+    //const users$ = this.refresh();
+    this.UsersService.getUsers().subscribe((data)=>this.Userlist = data);
+  }
+
+  editUser(id){
+    console.log(id);
+    
   }
 
   async refresh() {
     // this.loading = true;
-    const data = await this.UsersService.getUsers();
-    // this.dataSource.data = data;
-    // this.loading = false;
+      await this.UsersService.getUsers().subscribe((response)=>{
+      console.log("Respose from user API: ", response);
+      
+    },(error)=>{
+      console.log('Error is: ', error);
+    })
+   
   }
 
-  
+   
 
   }
   

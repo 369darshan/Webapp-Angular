@@ -108,7 +108,45 @@ app.listen(4201, '127.0.0.1', function () {
 //     user.pass);
 // });
 
+// function auth(req,res,next){
+  
+  //console.log(req.headers);
 
+  //var authHeader = req.headers.authorization;
+//   if(!authHeader){
+//     var err = new Error('you are not authenticated');
+//     res.setHeader('WWW-Authenticate','Basic');
+//     err.status = 401;
+//     return next(err);
+//   }
+
+//   var auth = new Buffer.from(authHeader.split(' ')[1],'base64').toString().split(':');
+//   var username =  auth[0];
+//   var password = auth[1];
+//   if(username === 'admin' && password === 'password'){
+//     next();
+//   }
+//   else{
+//     var err = new Error('you are not authenticated');
+//     res.setHeader('WWW-Authenticate','Basic');
+//     err.status = 401;
+//     return next(err);
+//   }
+// }
+
+/* Basic auth method for every requests */
+// function auth(req,res,next){
+//   if(!req.user){
+//     var err = new Error('You are not authenticated!');
+//     err.status=403;
+//     return next(err);
+
+//   }else{
+//     next();
+
+//     }
+//   }
+// app.use(auth);
 app.use(
   express.urlencoded({
     extended: true
