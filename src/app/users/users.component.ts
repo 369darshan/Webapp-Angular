@@ -23,9 +23,15 @@ export class UsersComponent implements OnInit {
     this.UsersService.getUsers().subscribe((data)=>this.Userlist = data);
   }
 
-  editUser(id){
+  getUser(id: string){
     console.log(id);
+    this.UsersService.getUser(id).subscribe((data)=>this.Userlist = data);
     
+  }
+
+  deleteUser(id){
+    this.UsersService.deleteUser(id).subscribe();
+
   }
 
   async refresh() {

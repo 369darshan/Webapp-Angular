@@ -1,6 +1,6 @@
 <div class="container">
   <mat-card>
-
+    <mat-card-title>User Details</mat-card-title>
     <table border="1" width=100% cellspacing="0">
       <tr>
         <th>id</th>
@@ -12,7 +12,18 @@
         <td mat-cell style="text-align: center;"> {{user._id}} </td>
         <td mat-cell style="text-align: center;"> {{user.name}} </td>
         <td mat-cell style="text-align: center;"> {{user.email}} </td>
-        <td mat-cell style="text-align: center;"><button id="edit" (click)='editUser(user._id)'routerLink="/UserDetailsComponent">Edit</button></td>
+        <td mat-cell style="text-align: center;">
+          <button id="edit" (click)="getUser(user._id)" routerLink="/UserDetailsComponent">
+            <mat-icon style="cursor:pointer" >edit</mat-icon>
+          </button>
+          <button id="delete" (click)='getUser(user._id)'routerLink="/UserDetailsComponent" >
+            <mat-icon>delete</mat-icon>
+          </button>
+          
+          <!-- <mat-icon (click)='deleteUser(user._id)'routerLink="/UserDetailsComponent" style="cursor:pointer">delete</mat-icon> -->
+         
+
+        </td>
       </tr>
 
     </table>
@@ -47,57 +58,7 @@
               <!-- End search -->
             </div>
             <!-- Table -->
-            <div class="table-responsive">
-              <table id="basic-datatable"
-                class="table table-centered dt-responsive nowrap datatables no-footer dtr-inline">
-                <thead>
-                  <tr>
-                    <th >User Id</th>
-                    <th >Date</th>
-                    <th >Billing Name</th>
-                    <th >Total</th>
-                    <th >Payment Status</th>
-                    <th>Invoice</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  <tr *ngFor="let user of Userlist">
-                     <td>
-                          <a class="text-dark font-weight-bold">
-                            <td>{{user._id}}</td>
-                          </a>
-                        </td>
-                       <!-- <td>
-                          <ngb-highlight [result]="table.date" [term]="service.searchTerm"></ngb-highlight>
-                        </td>
-                        <td>
-                          <ngb-highlight [result]="table.billingname" [term]="service.searchTerm"></ngb-highlight>
-                        </td>
-                        <td>
-                          <ngb-highlight [result]="table.total" [term]="service.searchTerm"></ngb-highlight>
-                        </td>
-                        <td>
-                          <div class="badge font-size-12" [ngClass]="{'badge-soft-danger': table.paymentstatus === 'Chargeback',
-                          'badge-soft-success':table.paymentstatus === 'Paid',
-                          'badge-soft-warning': table.paymentstatus === 'Unpaid'}">
-                           <ngb-highlight [result]="table.paymentstatus" [term]="service.searchTerm"></ngb-highlight>
-                          </div>
-                        </td> -->
-                    <td>
-                      <button class="btn btn-light btn-rounded">Invoice <i class="mdi mdi-download ml-2"></i></button>
-                    </td>
-                    <td>
-                      <a href="javascript:void(0);" class="mr-3 text-primary" placement="top" ngbTooltip="Edit"><i
-                          class="mdi mdi-pencil font-size-18"></i></a>
-                      <a href="javascript:void(0);" class="text-danger" placement="top" ngbTooltip="Delete"><i
-                          class="mdi mdi-trash-can font-size-18"></i></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            
             <!-- End table -->
             <div class="row justify-content-md-between align-items-md-center mt-2">
               <div class="col-sm-12 col-md-5">

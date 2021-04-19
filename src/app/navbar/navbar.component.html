@@ -10,8 +10,9 @@
       </ul> -->
     
   </div>
-  <button id="collapseBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleSideBar()" >
+  <!-- <button id="collapseBtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleSideBar()" >
     Menu</button>
+ 
     <div class="sidebar">
       <ul>
         <li class="navbar-item"><a class="nav-link" routerLink="/Home-component">Home</a></li>
@@ -19,5 +20,36 @@
         <li class="navbar-item"><a class="nav-link" routerLink="/users">Users</a></li>
       </ul>
     </div>
-</nav>
+</nav> -->
 
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer mode="push">
+    
+    <ul>
+      <li class="navbar-item"><a class="nav-link" routerLink="/Home-component">Home</a></li>
+      <li class="navbar-item"><a class="nav-link" routerLink="/Login-component">Login</a></li>
+      <li class="navbar-item"><a class="nav-link" routerLink="/users">Users</a></li>
+    </ul>
+  
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <!-- <mat-form-field>
+      <mat-label>Sidenav mode</mat-label>
+      <mat-select #mode value="side">
+        <mat-option value="side">Side</mat-option>
+        <mat-option value="over">Over</mat-option>
+        <mat-option value="push">Push</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Has backdrop</mat-label>
+      <mat-select #hasBackdrop>
+        <mat-option>Unset</mat-option>
+        <mat-option [value]="true">True</mat-option>
+        <mat-option [value]="false">False</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+  </mat-drawer-content>
+</mat-drawer-container>

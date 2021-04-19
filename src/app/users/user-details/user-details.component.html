@@ -1,15 +1,33 @@
 <form>
-    <div class='container'>
+    <div class='container'*ngFor="let user of (userinfo)">
         <label>Id</label>&nbsp;
-        <input type="text" /><br>
+        <input type="text" />{{user._id}}<br>
         <label>Name</label>&nbsp;
-        <input type="text" /><br>
+        <input type="text" />{{user.name}}<br>
         <label>Email</label>&nbsp;
-        <input type="text" /><br>
+        <input type="text" />{{user.email}}<br>
         <label>Password</label>&nbsp;
         <input type="text" /><br><br>
-        <button>Save</button>&nbsp;
-        <button>Cancel</button>
+        <button (click)="getUser(id)">Save</button>&nbsp;
+        <button>Cancel</button>&nbsp;
+        <button routerLink="/users" >Back</button>&nbsp;
 
+        <!-- <tr *ngFor="let user of (userinfo)">
+            <td mat-cell style="text-align: center;"> {{user._id}} </td>
+            <td mat-cell style="text-align: center;"> {{user.name}} </td>
+            <td mat-cell style="text-align: center;"> {{user.email}} </td>
+            <td mat-cell style="text-align: center;">
+              <button id="edit" (click)="getUser(user._id)" routerLink="/UserDetailsComponent">
+                <mat-icon style="cursor:pointer" >edit</mat-icon>
+              </button>
+              <button id="delete" (click)='getUser(user._id)'routerLink="/UserDetailsComponent" >
+                <mat-icon>delete</mat-icon>
+              </button>
+              
+              <mat-icon (click)='deleteUser(user._id)' routerLink="/UserDetailsComponent" style="cursor:pointer">delete</mat-icon>
+             
+    
+            </td>
+          </tr> -->
     </div>
 </form>

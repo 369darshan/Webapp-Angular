@@ -47,7 +47,7 @@ export class UsersService {
 
   getUser(id: string) {
     // return this.request('get', `${baseUrl}/user/${id}`);
-    return this.http.get<User[]>(`${baseUrl}/user/${id}`);
+    return this.http.get<User[]>(`${baseUrl}/users/${id}`);
   }
 
   createUser(User: User) {

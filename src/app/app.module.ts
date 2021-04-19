@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatCardModule} from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -18,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 // import {DialogService} from './services/dialog.service';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon'
 
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './Shared/baseurl';
@@ -40,6 +43,9 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
     BrowserAnimationsModule,
     HttpClientModule,
 
+    MatSidenavModule,
+    MatSelectModule,
+    MatIconModule,
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,

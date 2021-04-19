@@ -8,12 +8,17 @@ import { UsersService } from '../service/users.service';
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-  userinfo=[];
+  public userinfo=[];
+  id=[];
   
   constructor(private UsersService: UsersService) {  }
 
   ngOnInit(): void {
     // this.UsersService.getUser(id).subscribe((user)=>this.userinfo = user);
+  }
+
+  getUser(id: string){
+    this.UsersService.getUser(id).subscribe((data)=>this.userinfo = data);
   }
 
 }
